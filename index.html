@@ -5,45 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TABUT ALLAH UNTUK KITA - Bahtera Allah bagi kita</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial; background: linear-gradient(to bottom, #87CEEB, #E0F6FF); text-align: center; }
-        .bilah-navigasi { background: #004080; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
-        .tombol-menu { font-size: 28px; color: white; }
-        .judul-navigasi { color: white; font-size: 18px; font-weight: bold; }
-        .bagian-logo { padding: 30px 20px; }
-        .video-ark { width: 90%; max-width: 400px; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-        h1 { color: #004080; margin-top: 15px; font-size: 24px; }
-        h2 { color: #0066cc; font-size: 16px; margin-bottom: 20px; }
-        .bendera { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 20px; }
-        .bendera { font-size: 40px; }
-        .tombol { padding: 20px; }
-        .tombol { padding: 14px 35px; margin: 10px; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; }
-        .tombol-masuk { background: #004080; color: white; }
-        .btn-daftar { background: #FF8C00; color: white; }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:Arial;background:linear-gradient(to bottom,#87CEEB,#E0F6FF);text-align:center;}
+        .navbar{background:#004080;padding:15px;display:flex;justify-content:space-between;align-items:center;position:relative;}
+        .menu-btn{font-size:28px;color:white;cursor:pointer;}
+        .nav-title{color:white;font-size:18px;font-weight:bold;}
+        .menu{position:absolute;top:55px;left:10px;background:white;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.2);display:none;flex-direction:column;width:200px;z-index:100;}
+        .menu a{padding:12px 20px;text-decoration:none;color:#004080;border-bottom:1px solid #eee;text-align:left;font-weight:bold;}
+        .menu a:hover{background:#f0f0f0;}
+        .logo-section{padding:30px 20px;}
+        .ark-img{width:90%;max-width:400px;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,0.3);}
+        h1{color:#004080;margin-top:15px;font-size:24px;}
+        h2{color:#0066cc;font-size:16px;margin-bottom:20px;}
+        .flags{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;padding:20px;}
+        .flag{font-size:40px;}
+        .buttons{padding:20px;}
+        .btn{padding:14px 35px;margin:10px;border:none;border-radius:25px;font-size:16px;font-weight:bold;cursor:pointer;}
+        .btn-login{background:#004080;color:white;}
+        .btn-register{background:#FF8C00;color:white;}
     </style>
 </head>
 <body>
-    <div class="bilah-navigasi">
-        <div class="tombol-menu">≡</div>
-        <div class="judul-navigasi">TABUT ALLAH UNTUK KITA</div>
+    <div class="navbar">
+        <div class="menu-btn" onclick="toggleMenu()">≡</div>
+        <div class="nav-title">TABUT ALLAH UNTUK KITA</div>
         <div></div>
+        <div class="menu" id="menu">
+            <a href="#">🏠 Beranda</a>
+            <a href="#">📖 Tentang Kami</a>
+            <a href="#">👤 Login</a>
+            <a href="#">📞 Kontak</a>
+            <a href="#">❤️ Donasi</a>
+        </div>
     </div>
-    <div class="bagian-logo">
-        <video class="video-ark" autoplay loop muted playsinline>
-            <source src="VID-20260826-WA1699.mp4" type="video/mp4">
-        </video>
+    <div class="logo-section">
+        <img class="ark-img" src="https://i.imgur.com/8yZ5bQp.png" alt="Bahtera">
         <h1>TABUT ALLAH UNTUK KITA</h1>
         <h2>BAHTERA ALLAH BAGI KITA</h2>
     </div>
-    <div class="bendera">
-        <div class="bendera">🇮🇩</div> <div class="bendera">🇺🇸</div> <div class="bendera">🇰🇷</div>
-        <div class="bendera">🇨🇳</div> <div class="bendera">🇯🇵</div> <div class="bendera">🇮🇳</div>
-        <div class="bendera">🇧🇷</div> <div class="bendera">🇩🇪</div> <div class="bendera">🇫🇷</div>
-        <div class="bendera">🇳🇬</div>
+    <div class="flags">
+        <div class="flag">🇮🇩</div> <div class="flag">🇺🇸</div> <div class="flag">🇰🇷</div>
+        <div class="flag">🇨🇳</div> <div class="flag">🇯🇵</div> <div class="flag">🇮🇳</div>
+        <div class="flag">🇧🇷</div> <div class="flag">🇩🇪</div> <div class="flag">🇫🇷</div>
+        <div class="flag">🇳🇬</div>
     </div>
-    <div class="tombol">
-        <button class="tombol tombol-masuk">Login</button>
-        <button class="tombol btn-daftar">Daftar</button>
+    <div class="buttons">
+        <button class="btn btn-login">Login</button>
+        <button class="btn btn-register">Daftar</button>
     </div>
+
+    <script>
+        function toggleMenu(){
+            var menu = document.getElementById("menu");
+            if(menu.style.display === "flex"){menu.style.display = "none";} 
+            else {menu.style.display = "flex";}
+        }
+    </script>
 </body>
 </html>
