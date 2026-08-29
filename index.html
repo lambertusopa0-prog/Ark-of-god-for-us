@@ -53,31 +53,43 @@
     </div>
     <div class="buttons">
         <button class="btn btn-login">Login</button>
+        <!-- TOMBOL DI TENGAH -->
+<div style="text-align:center; margin:20px;">
+  <button onclick="openPopup('login')" style="background:#1E90FF; color:white; padding:12px 30px; border-radius:25px; border:none; margin:5px;">Login</button>
+  
+  <button onclick="openPopup('daftar')" style="background:#FF8C00; color:white; padding:12px 30px; border-radius:25px; border:none; margin:5px;">Daftar</button>
+</div>
 
-        <!-- FORM PENDAFTARAN JEMAAT -->
-<section id="daftar" style="padding: 40px 20px; background: #0a0a0a;">
-  <div style="max-width: 600px; margin: auto; text-align: center;">
-    <h2 style="color: #FFD700; font-size: 24px; margin-bottom: 10px;">PENDAFTARAN JEMAAT</h2>
-    <p style="color: #ccc; margin-bottom: 20px;">
-      Isi data dengan benar. Bergabung tanpa paksaan.
-    </p>
-
-    <!-- INI FORM DARI TALLY BAPAK -->
-    <div style="background: #1a1a1a; padding: 15px; border-radius: 12px; border: 2px solid #FFD700;">
-      <iframe 
-        data-tally-src="https://tally.so/r/b5QJ00" 
-        loading="lazy" 
-        width="100%" 
-        height="550" 
-        frameborder="0">
-      </iframe>
-    </div>
-    
+<!-- POPUP LOGIN -->
+<div id="popup-login" class="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:999;">
+  <div style="background:white; max-width:400px; margin:100px auto; padding:20px; border-radius:12px; position:relative;">
+    <span onclick="closePopup()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">×</span>
+    <h2 style="text-align:center;">Login Jemaat</h2>
+    <p>Fitur login bisa diarahkan ke WA admin dulu Bapak</p>
+    <a href="https://wa.me/62" target="_blank" style="display:block; text-align:center; background:green; color:white; padding:10px; border-radius:8px; text-decoration:none;">Hubungi Admin</a>
   </div>
-</section>
+</div>
+
+<!-- POPUP DAFTAR DENGAN FORM TALLY -->
+<div id="popup-daftar" class="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:999; overflow-y:auto;">
+  <div style="background:#0a0a0a; max-width:600px; margin:50px auto; padding:20px; border-radius:12px; border:2px solid #FFD700; position:relative;">
+    <span onclick="closePopup()" style="position:absolute; top:10px; right:15px; font-size:24px; color:white; cursor:pointer;">×</span>
+    <h2 style="color:#FFD700; text-align:center;">PENDAFTARAN JEMAAT</h2>
+    <p style="color:#ccc; text-align:center;">Isi data dengan benar. Bergabung tanpa paksaan.</p>
+    
+    <iframe data-tally-src="https://tally.so/r/b5QJ00" loading="lazy" width="100%" height="500" frameborder="0"></iframe>
+  </div>
+</div>
 
 <script src="https://tally.so/widgets/embed.js"></script>
-        </button>
+<script>
+function openPopup(type){
+  document.getElementById('popup-'+type).style.display = 'block';
+}
+function closePopup(){
+  document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+}
+</script>
     <script>
         function toggleMenu(){
             var menu = document.getElementById("menu");
